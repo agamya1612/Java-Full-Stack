@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+
+function test(e)
+{
+if(!( e.which >= 97 && e.which <=122 ))
+{
+e.preventDefault(); 
+}
+}
+function test2(e)
+{
+if(!( e.which >= 97 && e.which <=122 || e.which >=65 && e.which<=90))
+{
+e.preventDefault(); 
+}
+}
+
+function hideimg(){
+
+	document.getElementById("img").style.visibility="hidden"
+
+}
+function showimg()
+{
+	document.getElementById("img").style.visibility="visible"
+}
+function fullName(){
+
+var fname = document.getElementById("fn").value;
+var lname = document.getElementById("ln").value;
+var fullname = document.getElementById("nm");
+fullname = fname+lname
+
+window.alert("Full Name is "+fullname);
+
+}
+studs=[['roll No','name','College Name' ,'Marks','Sem'],['1','Virat','IIT' ,'100','8'],['2','Rohit','IIT','100' ,'6'] ,['3','Shikhar','JNU' ,'90','4'],['4','Rahul','IIT','80' ,'6']]
+
+document.write("<table border='1px' width='50%' align='center' >");
+
+for(i=0;i<studs.length;i++){
+document.write("<tr>")
+
+for(j=0;j<studs[i].length;j++){
+
+document.write("<td> "+studs[i][j]+"</td>")
+}
+
+document.write("</tr>");
+}
+document.write("</table>");
+
+
+
+function dollarToRupee(){
+
+			var d = document.getElementById("dollar").value;
+			var rupee=parseInt(d)*74;
+			window.alert("Rupee value is "+rupee);
+
+		}
+
+function openRequestedPopup() {
+windowObjectReference = window.open("http://www.google.com/", "GOOGLE_WindowName", "windowFeatures");
+}            
+
+</script>
+<style>
+div {
+
+  width: 500px;
+  height: 100px;
+  border: 1px solid black;
+  text-align: center;
+}
+</style>
+<style type="text/css">
+.pointer {cursor: pointer;}
+</style>
+</head>
+
+<body>
+	
+	<center>
+	Small<input type="textbox" id="mytxt" onkeypress="test(event)"><br><br>
+	OnlyAlpha<input type="textbox" id="mytxt" onkeypress="test2(event)"><br><br>
+	<input type="Button" value="Change"class="pointer"><br><br>
+	
+	<img src="form.jpg" id="img" onmouseover="hideimg()" onmouseout="showimg()" alt ="form"style="width: 220px; height: 220px"><br><br>
+	Firstname: <input type="text" id="fn"> &nbsp &nbsp Lastname: <input type="text" id="ln"> &nbsp &nbsp
+<button id="nm" onclick="fullName()">Click here for Full Name</button><br><br>
+
+<p id="demo" onclick="showCoords(event)"></p>
+
+<p>Move your mouse anywhere on the screen to see its position!</p>
+    <p id="scrn"></p>
+
+    <input type="number" id="dollar"  >
+    <input type="submit" onclick="dollarToRupee()" value="dollar"><br>
+
+     <input type="submit" align="center" value="Open Window" name="submit" onclick="openRequestedPopup()">
+
+     <div onclick="showCoords(event)"><p id="demo"></p></div>
+  <script>
+function showCoords(event) {
+  var cX = event.cordX;
+  var sX = event.screenX;
+  var cY = event.cordY;
+  var sY = event.screenY;
+  var coords1 = "client - X: " + cX + ", Y coords: " + cY;
+  var coords2 = "screen - X: " + sX + ", Y coords: " + sY;
+  document.getElementById("demo").innerHTML = coords1 + "<br>" + coords2;
+}
+</script>
+</center>
+</body>
+</html>
+
+
