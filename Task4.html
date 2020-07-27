@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js
+"></script>
+
+<script type="text/javascript">
+
+
+$(function(){
+$('#btn1').click(
+	function(){ $("div.xyz").hide() }
+)
+})
+
+
+$(function(){
+$('#btn2').click(
+
+function(){ $("p.abc").hide() }
+)
+})
+
+$(function(){
+$('#btn3').click(
+function()
+{$("#div1").fadeIn();
+ $("#div2").fadeIn("slow");
+ $("#div3").fadeIn(3000);}
+)
+})
+
+
+$(function(){
+$('#btn4').click(
+	function(){ $("div.xyz").show() }
+)
+})
+
+
+$(function(){
+$('#down').click(
+	function(){ $("#div4").slideDown() }
+)
+})
+
+
+$(function(){
+$('#up').click(
+	function(){ $("#div4").slideUp() }
+)
+})
+
+$(function(){
+$('#toggle').click(
+	function(){ $("#div4").slideToggle() }
+)
+})
+</script>
+</head>
+
+<body>
+<div class="xyz">
+<p> This is p Tag1 </p>
+<p>This is p Tag2</p>
+<p> This is p Tag3 </p>
+<p class="abc">This is p Tag4</p>
+<p class="abc"> This is p Tag5 </p>
+</div>
+
+<div id="div1" style="width:80px;height:80px;display:none;background-color:red;"></div><br>
+<div id="div2" style="width:80px;height:80px;display:none;background-color:green;"></div><br>
+<div id="div3" style="width:80px;height:80px;display:none;background-color:blue;"></div>
+
+
+<input type="submit" id="btn1" value="Button1" >
+<input type="submit" id="btn2" value="Button2" >
+<input type="submit" id="btn3" value="Button3" >
+<input type="submit" id="btn4" value="Show" >
+
+<div id="div4" style="width:100px;height:100px;background-color:red;"></div>
+<button id="up">Slide Up</button>
+<button id="down">Slide down</button>
+<button id="toggle">Toggle</button>
+
+
+</body>
+
+</html>
