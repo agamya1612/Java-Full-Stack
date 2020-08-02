@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registraion Form</title>
+
+	<script type="text/javascript">
+
+function emp(e)
+{
+var a= document.getElementById('mytxt').value;
+
+if(!( e.which >= 65 && e.which <=90 || e.which >=97 && e.which <=122))
+{
+e.preventDefault(); 
+alert(a);
+}
+}
+function pwdvalidate() {
+var pwd= document.getElementById('pwd');
+var cpwd= document.getElementById('cpwd');
+if(pwd!=cpwd)
+{
+	alert('Password Not Matched');
+	return false;
+}
+}
+
+function Qualification() {
+	qual=['Graduation','Post Graduation'];
+var data=document.getElementById('dd');
+for(i=0;i<qual.length;i++){
+	var ele=document.createElement('option');
+	ele.text=qual[i];
+	data.add(ele,i+1)
+}
+}
+
+
+function Degree()
+{
+data=[['B.tech','B.com','BCA'],['M.tech','M.com','MCA']];
+var dat=document.getElementById('type');
+var selectedIdx= dat.selectedIndex;
+var dataDD=document.getElementById('dd');
+dataDD.innerText=null;
+for(i=0;i<data[selectedIdx].length;i++)
+{
+var ele=document.createElement('option');
+ele.text=data[selectedIdx][i];
+dataDD.add(ele,i+1)
+}
+}
+
+
+
+ </script>
+</head>
+<body  style="background-image: url(Form.jpg); background-repeat: no-repeat; background-size: cover; " onload="Qualification()">
+
+	<center>
+		<div style=" background-color: white;  width: 500px">
+		<h1>Registration Form</h1>
+		<form action="Success.html">
+			Employee Name <input type="Text" id="mytxt" name="empname" onkeypress="emp(event)"><br>
+			Password      <input type="Password" name="pwd" id="pwd" ><br>
+		    Confirm Password  <input type="Password" name="cpwd" id="cpwd"><br>
+		
+		<select  id="dd">
+        <option>select</option>
+        </select>
+        <select id="type" onchange="Degree()">
+		</select><br>
+        <input type="date" id="dob" min="2002-01-01" alt="invalid dob"><br>
+        <input type="Submit" onclick="pwdvalidate()">
+
+		</form>
+	    </div>
+	    </center>
+	
+
+</body>
+</html>
