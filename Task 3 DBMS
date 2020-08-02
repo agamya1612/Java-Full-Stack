@@ -1,0 +1,35 @@
+SQL> conn agamdxc
+Enter password:
+Connected.
+
+create table emp
+(
+efname varchar(20),
+emname varchar(20),
+elname varchar(20),
+eage int check (eage between 0 and 49),
+ecity varchar(20) check(ecity like 'B%'),
+edesig varchar(20),
+eid varchar(5) ,
+edob date,
+constraint ckt check(length(eid)=5)
+);
+
+create table emp1
+(
+efname varchar(20),
+emname varchar(20),
+elname varchar(20),
+eage int check (eage between 0 and 49),
+ecity varchar(20) check(ecity like'B%'),
+edesig varchar(20),
+eid varchar(5) primary key,
+edob date,
+constraint ckt check(length(eid)=5)
+);
+
+insert into emp values('ab','y','abc',23,'Bombay','sales','emp07',to_date('01-01-2020','dd-mm-yyyy'));
+insert into emp values('abc','z','abc1',24,'Bang','sales','emp06',to_date('01-01-2020','dd-mm-yyyy'));
+insert into emp values('abcd','x','abc2',26,'Bang','sales','emp09',to_date('01-01-2020','dd-mm-yyyy'));
+insert into emp values('abcde','w','abc3',28,'Bang','sales','emp04',to_date('01-01-2020','dd-mm-yyyy'));
+insert into emp values('abec','o','abc4',27,'Bang','sales','emp08',to_date('01-01-2020','dd-mm-yyyy
