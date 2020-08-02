@@ -61,14 +61,14 @@ dataDD.add(ele,i+1)
 		<div style=" background-color: white;  width: 500px">
 		<h1>Registration Form</h1>
 		<form action="Success.html">
-			Employee Name <input type="Text" id="mytxt" name="empname" onkeypress="emp(event)"><br>
-			Password      <input type="Password" name="pwd" id="pwd" ><br>
-		    Confirm Password  <input type="Password" name="cpwd" id="cpwd"><br>
+			Employee Name <input type="Text" id="mytxt" name="empname" onkeypress="emp(event)" required><br>
+			Password      <input type="Password" name="pwd" id="pwd" required><br>
+		    Confirm Password  <input type="Password" name="cpwd" id="cpwd" required><br>
 		
 		<select  id="dd">
         <option>select</option>
         </select>
-        <select id="type" onchange="Degree()">
+        <select id="type" onchange="Degree()" >
 		</select><br>
         <input type="date" id="dob" min="2002-01-01" alt="invalid dob"><br>
         <input type="Submit" onclick="pwdvalidate()">
