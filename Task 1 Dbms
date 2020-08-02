@@ -1,0 +1,160 @@
+
+
+SQL> conn agamdxc
+Enter password:
+Connected.
+SQL> select * from stock;
+
+ORDERNAME               ORDERNO      PRICE ORDERTYPE
+-------------------- ---------- ---------- ------------------------------
+COMPANYNAME
+--------------------
+Laptop                     1001      20000 hardware
+HP
+
+Laptop                     1002      30000 hardware
+Asus
+
+Desktop                    1003      40000 Hardware
+Compaq
+
+
+SQL> select * from sales;
+
+no rows selected
+
+SQL> SELECT TO_CHAR
+  2      (SYSDATE, 'MM-DD-YYYY HH24:MI:SS') "NOW"
+  3       FROM DUAL;
+
+NOW
+-------------------
+07-28-2020 15:09:25
+
+SQL>
+SQL> SELECT TO_CHAR (SSELECT TO_CHAR
+  2      (SYSDATE, 'MM-DD-YYYY HH24:MI:SS') "NOW"
+  3       FROM DUAL;
+SELECT TO_CHAR (SSELECT TO_CHAR
+                        *
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+
+
+SQL>
+SQL> select to_char    (SYSDATE, 'MM-DD-YYYY') "NOW" from dual;
+
+NOW
+----------
+07-28-2020
+
+SQL> select to_char    (SYSDATE, 'dd-mm-YYYY') "NOW" from dual;
+
+NOW
+----------
+28-07-2020
+
+SQL> SELECT TO_CHAR (date '2020-07-28', 'DAY') day FROM dual;
+
+DAY
+---------
+TUESDAY
+
+SQL> SELECT TO_CHAR (date '2020-07-30', 'DAY') day FROM dual;
+
+DAY
+---------
+THURSDAY
+
+SQL> SELECT TO_CHAR (SYSDATE+10,'DD-MM-YYYY') FROM DUAL;
+
+TO_CHAR(SY
+----------
+07-08-2020
+
+SQL> SELECT TO_CHAR (SYSDATE+10,'10-05-2020') FROM DUAL;
+SELECT TO_CHAR (SYSDATE+10,'10-05-2020') FROM DUAL
+                           *
+ERROR at line 1:
+ORA-01821: date format not recognized
+
+
+SQL> SELECT TO_CHAR (DATE+10,'10-05-2020') FROM DUAL;
+SELECT TO_CHAR (DATE+10,'10-05-2020') FROM DUAL
+                *
+ERROR at line 1:
+ORA-00936: missing expression
+
+
+SQL> SELECT TO_CHAR (DATE+10,'10-05-2020') FROM DUAL;
+SELECT TO_CHAR (DATE+10,'10-05-2020') FROM DUAL
+                *
+ERROR at line 1:
+ORA-00936: missing expression
+
+
+SQL> select to_date('10-01-2020','dd-mm-yyyy') + 10 from dual;
+
+TO_DATE('
+---------
+20-JAN-20
+
+SQL> desc clg;
+ Name                                      Null?      Type
+ ----------------------------------------- --------      ----------------------------
+ CID                                       NOT  NULL NUMBER(38)
+ CNAME                                              VARCHAR2(20)
+
+SQL> select * from clg;
+
+       CID CNAME
+---------- --------------------
+       121 IIT
+       122 JNU
+
+
+
+SQL> desc dual;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ DUMMY                                              VARCHAR2(1)
+
+SQL> select * from dual;
+
+D
+-
+X
+
+SQL> create table customer(cid int primary key,
+  2  cname varchar(20),
+  3  cust_no int not null);
+
+Table created.
+
+SQL> insert into customer values('001','Agamya',null);
+insert into customer values('001','Agamya',null)
+                                           *
+ERROR at line 1:
+ORA-01400: cannot insert NULL into ("AGAMDXC"."CUSTOMER"."CUST_NO")
+
+
+SQL> insert into customer values('001','Agamya','901732');
+
+1 row created.
+
+SQL> insert into customer values('002','Ishraq','9014542');
+
+1 row created.
+
+SQL> insert into customer values('003','Shaurya','9048394');
+
+1 row created.
+
+SQL> select * from  customer;
+
+       CID CNAME                   CUST_NO
+---------- -------------------- ----------
+         1 Agamya                   901732
+         2 Ishraq                  9014542
+         3 Shaurya                 9048394
+
