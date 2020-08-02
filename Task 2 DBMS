@@ -1,0 +1,37 @@
+create table timetable2(day varchar(10),    sess varchar(10),    roomno varchar(5),   faculty varchar(10),   sem number(5)   ,   subject varchar(10),  constraint pk1 primary key(day,sess,roomno),constraint uq_tt unique(day,sess,faculty),constraint uq unique(day,sess,sem));
+
+Table created.
+
+SQL> insert into timetable2 values('Monday','2','R2','Ram',5,'JAVA');
+
+1 row created.
+
+SQL> insert into timetable2 values('Monday','2','R1','Ram',1,'JAVA');
+insert into timetable2 values('Monday','2','R1','Ram',1,'JAVA')
+*
+ERROR at line 1:
+ORA-00001: unique constraint (AGAMDXC.UQ_TT) violated
+
+
+SQL> insert into timetable2 values('Monday','1','R1','Rohan',1,'JAVA');
+
+1 row created.
+
+SQL> insert into timetable2 values('Monday','1','R1','Raj',5,'JAVA');
+insert into timetable2 values('Monday','1','R1','Raj',5,'JAVA')
+*
+ERROR at line 1:
+ORA-00001: unique constraint (AGAMDXC.PK1) violated
+
+
+SQL> insert into timetable2 values('Monday','1','R2','Ram',3,'JAVA');
+
+1 row created.
+
+SQL> select * from timetable2;
+
+DAY        SESS       ROOMN FACULTY           SEM SUBJECT
+---------- ---------- ----- ---------- ---------- ----------
+Monday     2          R2    Ram                 5 JAVA
+Monday     1          R1    Rohan               1 JAVA
+Monday     1          R2    Ram                 3 JAVA
