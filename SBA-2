@@ -1,0 +1,82 @@
+package SBA2;
+
+public class Split {
+	public static void main(String[] args) {
+		String str="This is Java Programming";
+		String[] str1=str.split(" ");
+		for (int i = 0; i < str1.length; i++) {
+			System.out.println(str1[i]);
+			}
+		}
+  }
+ ------------------------------------------------------
+ 
+ package SBA2;
+
+public class SplitReverse {
+	
+	public void Stringrv(String str) {
+		String[] str1=str.split(" ");
+		for (int i = 0; i < str1.length; i++) {
+			String str2=str1[i];
+			StringBuilder s=new StringBuilder(str2);
+			s.reverse();
+			System.out.println(s);
+			}
+			
+		}
+
+	public static void main(String[] args) {
+		new SplitReverse().Stringrv("This is Java programing");
+					
+				}
+	}
+
+---------------------------------------------------------------------
+
+package SBA2;
+
+class UncheckedException extends Exception {
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
+
+		public UncheckedException() {
+		System.out.println("Invalid marks");
+		}
+	}
+  
+  package SBA2;
+  
+  public class ValidateMarks {
+	void validmarks(int marks) throws UncheckedException
+			{
+			if(marks>100)
+			throw new UncheckedException();
+			else
+			System.out.println("Marks scored is "+marks);
+			}
+			}
+
+
+	package SBA2;
+  public class MyExcep {
+
+	public static void main(String args[]) {
+	ValidateMarks d=new ValidateMarks();
+	try {
+	d.validmarks(110);
+	}
+	catch (Exception e) {
+	
+	System.out.println(e);
+	}
+	}
+}
+		
+-------------------------------------------------		
+		
+
+		
+
