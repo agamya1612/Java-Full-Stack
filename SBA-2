@@ -76,7 +76,164 @@ class UncheckedException extends Exception {
 }
 		
 -------------------------------------------------		
-		
+package SBA2;
+import java.util.*;
+public class Showroommain {
+	Map<String,List<Cars>> carstore;
+	public void displayCars(String showroomname)
+	{
+	List<Cars> cars=carstore.get(showroomname);
+	for(Cars car:cars){
+	System.out.println(car);
+	}
+
+	}
+	public static void main(String[] args) {
+	Cars c1=new Cars("Verna",2010);
+	Cars c2=new Cars("Maruthi",2005);
+	Cars c3=new Cars("Swift",2008);
+	Cars c4=new Cars("WagonR",2006);
+	List<Cars> cars=new Vector<Cars>();
+	          cars.add(c1);
+	          cars.add(c2);
+	          cars.add(c3);
+	          cars.add(c4);
+	   Showroom showroom=new Showroom("Coral motors",1001,cars);
+	       
+	  Cars c5=new Cars("Scoda",2001);
+	  Cars c6=new Cars("KIA",2009);
+	  Cars c7=new Cars("Ertiga",2007);
+	  List<Cars> cars1=new Vector<Cars>();
+	   cars1.add(c5);
+	   cars1.add(c6);
+	   cars1.add(c7);
+	   
+	   Showroom showroom1=new Showroom("Carz World",1002,cars1);
+	   Showroommain m= new Showroommain();
+
+	  m.carstore=new HashMap<String,List<Cars>>();
+	  m.carstore.put(showroom.getShowroomname(), showroom.getCars());
+	  m.carstore.put(showroom1.getShowroomname(),showroom1.getCars());
+	  m.displayCars("Coral Motars");
+	  m.displayCars("Carz World");
+
+
+	}
+	}
+-----------------------------------------------------------------
+
+package SBA2;
+import java.util.List;
+
+public class Showroom {
+private String Showroomname;
+private int address;
+List<Cars> cars;
+public String getShowroomname() {
+return Showroomname;
+}
+public void setShowroomname(String showroomname) {
+Showroomname = showroomname;
+}
+public int getAddress() {
+return address;
+}
+public void setAddress(int address) {
+this.address = address;
+}
+public List<Cars> getCars() {
+return cars;
+}
+public void setCars(List<Cars> cars) {
+this.cars = cars;
+}
+public Showroom(String showroomname, int address, List<Cars> cars) {
+super();
+Showroomname = showroomname;
+this.address = address;
+this.cars = cars;
+}
+}
+-------------------------------------------------------------------
+package SBA2;
+
+public class Cars {
+	String Name;
+	int manuyear;
+	public Cars(String name, int manuyear) {
+		super();
+		this.manuyear = manuyear;
+		Name = name;
+	}
+	public int getManuyear() {
+		return manuyear;
+	}
+	public void setManuyear(int manuyear) {
+		this.manuyear = manuyear;
+	}
+	public String getName() {
+		return Name;
+	}
+	public void setName(String name) {
+		Name = name;
+	}
+	
+	@Override
+	public String toString() {
+		return "Cars [Name=" + Name + ", manuyear=" + manuyear + "]";
+	}
+	public Cars() {
+	}
+	}
+---------------------------------------------------------------------------
+package SBA2;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+public class CarSort {
+
+	public static void main(String[]args) {
+		List<String> Car=new ArrayList<String>();
+	Car.add("Verna");
+	Car.add("Maruthi");
+	Car.add("Swift");
+	Car.add("WagonR");
+	Car.add("Scoda");
+	Car.add("KIA");
+	Car.add("Ertiga");
+	Collections.sort(Car);
+	for(String x:Car) {
+	System.out.println(x);
+	}
+	}
+	}
+
+--------------------------------------------------------------------
+package SBA2;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class ManuSort {
+public static void main(String[]args) {
+List<Integer> Cars=new ArrayList<Integer>();
+Cars.add(2010);
+Cars.add(2005);
+Cars.add(2008);
+Cars.add(2006);
+Cars.add(2001);
+Cars.add(2009);
+Cars.add(2001);
+Collections.sort(Cars);
+for(int x:Cars) {
+System.out.println(x);
+}
+}
+
+}
+
+	
+	
 
 		
 
